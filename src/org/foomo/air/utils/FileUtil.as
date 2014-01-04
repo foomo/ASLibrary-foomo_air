@@ -27,11 +27,25 @@ package org.foomo.air.utils
 		 * @param overwrite Overwrite existing file
 		 * @return New file
 		 */
-		public static function cp(sourcePath:String, destinationPath:String, overwrite:Boolean=false):File
+		public static function copyTo(sourcePath:String, destinationPath:String, overwrite:Boolean=false):File
 		{
 			var source:File = new File(sourcePath);
 			var destination:File = new File(destinationPath);
 			source.copyTo(destination, overwrite);
+			return destination;
+		}
+
+		/**
+		 * @param sourcePath Path to file to copy
+		 * @param destinationPath Path to file to copy to
+		 * @param overwrite Overwrite existing file
+		 * @return New file
+		 */
+		public static function copyToAsync(sourcePath:String, destinationPath:String, overwrite:Boolean=false):File
+		{
+			var source:File = new File(sourcePath);
+			var destination:File = new File(destinationPath);
+			source.copyToAsync(destination, overwrite);
 			return destination;
 		}
 
